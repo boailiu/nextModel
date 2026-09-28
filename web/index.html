@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nextModel · 模型下线替代查询</title>
+<meta name="description" content="查询国内大模型下线后的替代模型：DeepSeek、Kimi、通义千问、豆包、智谱……">
+<style>
+  :root {
+    --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #78716c; --border: #e7e5e4;
+    --accent: #2563eb; --ok: #15803d; --ok-bg: #dcfce7; --warn: #a16207; --warn-bg: #fef9c3;
+    --bad: #b91c1c; --bad-bg: #fee2e2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e; --border: #292524;
+      --accent: #60a5fa; --ok: #4ade80; --ok-bg: #14532d; --warn: #facc15; --warn-bg: #422006;
+      --bad: #f87171; --bad-bg: #450a0a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92em; }
+  input[type=search] {
+    width: 100%; padding: 14px 16px; font-size: 17px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text); outline: none;
+  }
+  input[type=search]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+  .hint { color: var(--muted); font-size: 13px; margin: 8px 2px 0; }
+  .hint button { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; font: inherit; }
+  #results { margin-top: 24px; display: grid; gap: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .head .name { font-size: 18px; font-weight: 600; }
+  .head .prov { color: var(--muted); font-size: 13px; margin-left: auto; }
+  .badge { white-space: nowrap; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .active { color: var(--ok); background: var(--ok-bg); }
+  .deprecated { color: var(--warn); background: var(--warn-bg); }
+  .retired { color: var(--bad); background: var(--bad-bg); }
+  .target { margin: 14px 0 4px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .target .arrow { color: var(--muted); }
+  .target .to { font-size: 20px; font-weight: 700; color: var(--ok); }
+  .copy { font-size: 12px; border: 1px solid var(--border); background: transparent; color: var(--muted); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+  .copy:hover { color: var(--text); }
+  dl { display: grid; grid-template-columns: 72px 1fr; gap: 4px 12px; margin: 12px 0 0; font-size: 14px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .empty { color: var(--muted); }
+  h2 { font-size: 16px; margin: 48px 0 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 13px; }
+  td.mono { white-space: nowrap; }
+  .table-wrap { overflow-x: auto; }
+  tr.clickable { cursor: pointer; }
+  tr.clickable:hover td { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  @media (max-width: 560px) {
+    main { padding-top: 32px; }
+    .col-prov { display: none; }
+    th, td { padding: 8px 4px; }
+    td.mono:not(.date) { white-space: normal; overflow-wrap: anywhere; }
+    th { white-space: nowrap; }
+  }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>nextModel</h1>
+  <p class="sub">模型要下线了？查一下该换成什么。</p>
+
+  <input id="q" type="search" placeholder="输入模型名，如 deepseek-chat" autocomplete="off" autofocus spellcheck="false">
+  <p class="hint">支持 <code>provider/model</code> 写法 · 命令行：<code>npx nextmodel scan</code> 可扫描代码 · 试试 <button data-q="deepseek-reasoner">deepseek-reasoner</button> <button data-q="moonshot-v1-8k">moonshot-v1-8k</button></p>
+
+  <div id="results"></div>
+
+  <h2>已下线 / 即将下线</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>模型</th><th class="col-prov">厂商</th><th>状态</th><th>下线日期</th><th>替代</th></tr></thead>
+      <tbody id="all"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    数据均附官方来源链接，由社区维护。发现遗漏或错误？<a id="repo" href="#">欢迎提交 PR</a>。
+  </footer>
+</main>
+
+<script type="module">
+  import { ModelIndex } from './core.js';
+
+  const STATUS = { active: '可用', deprecated: '即将下线', retired: '已下线' };
+  const REPO = 'https://github.com/boailiu/nextModel';
+  document.getElementById('repo').href = `${REPO}/blob/main/CONTRIBUTING.md`;
+
+  const esc = (s) => String(s).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+  const $q = document.getElementById('q');
+  const $results = document.getElementById('results');
+
+  const db = await (await fetch('./models.json')).json();
+  const index = new ModelIndex(db);
+  const providerName = (id) => index.providers.get(id)?.name ?? id;
+
+  function card(r) {
+    const m = r.model;
+    const rows = [];
+    if (m.retire_at) rows.push(['下线日期', esc(m.retire_at)]);
+    if (r.chain.length > 1) rows.push(['替代链', `<span class="mono">${[m, ...r.chain].map((x) => esc(x.id)).join(' → ')}</span>`]);
+    if (r.alternatives.length) rows.push(['其他可选', `<span class="mono">${r.alternatives.map((x) => esc(x.id)).join(', ')}</span>`]);
+    if (m.notes) rows.push(['说明', esc(m.notes)]);
+    rows.push(['来源', `<a href="${esc(m.source)}" target="_blank" rel="noopener">${esc(m.source)}</a>`]);
+
+    let target = '';
+    if (r.status !== 'active') {
+      target = r.target
+        ? `<div class="target"><span class="arrow">替换为</span><span class="to mono">${esc(r.target.id)}</span><button class="copy" data-copy="${esc(r.target.id)}">复制</button></div>`
+        : `<div class="target empty">暂无收录的可用替代</div>`;
+    }
+    return `<div class="card">
+      <div class="head"><span class="name mono">${esc(m.id)}</span><span class="badge ${r.status}">${STATUS[r.status]}</span><span class="prov">${esc(providerName(m.provider))}</span></div>
+      ${target}
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
+    </div>`;
+  }
+
+  function render() {
+    const q = $q.value.trim();
+    const url = new URL(location.href);
+    q ? url.searchParams.set('q', q) : url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+    if (!q) { $results.innerHTML = ''; return; }
+
+    const rs = index.lookup(q);
+    if (rs.length) { $results.innerHTML = rs.map(card).join(''); return; }
+    const s = index.suggest(q);
+    $results.innerHTML = `<div class="card empty">未收录 <span class="mono">${esc(q)}</span>。${
+      s.length ? `你是不是要找：${s.map((x) => `<a href="?q=${encodeURIComponent(x)}" data-q="${esc(x)}">${esc(x)}</a>`).join('、')}` : ''
+    }<br>如果它已经下线，<a href="${REPO}/issues/new?template=deprecation.yml&title=${encodeURIComponent(q)}" target="_blank" rel="noopener">告诉我们</a>。</div>`;
+  }
+
+  document.getElementById('all').innerHTML = db.models
+    .map((m) => index.resolve(m))
+    .filter((r) => r.status !== 'active')
+    .sort((a, b) => (b.model.retire_at ?? '').localeCompare(a.model.retire_at ?? ''))
+    .map((r) => `<tr class="clickable" data-q="${esc(r.model.provider)}/${esc(r.model.id)}">
+      <td class="mono">${esc(r.model.id)}</td><td class="col-prov">${esc(providerName(r.model.provider))}</td>
+      <td><span class="badge ${r.status}">${STATUS[r.status]}</span></td>
+      <td class="mono date">${esc(r.model.retire_at ?? '')}</td><td class="mono">${esc(r.target?.id ?? '—')}</td></tr>`)
+    .join('');
+
+  document.addEventListener('click', (e) => {
+    const copy = e.target.closest('[data-copy]');
+    if (copy) {
+      navigator.clipboard?.writeText(copy.dataset.copy).then(() => { copy.textContent = '已复制'; setTimeout(() => (copy.textContent = '复制'), 1200); });
+      return;
+    }
+    const el = e.target.closest('[data-q]');
+    if (el) {
+      e.preventDefault();
+      $q.value = el.dataset.q;
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+  $q.addEventListener('input', render);
+  $q.value = new URLSearchParams(location.search).get('q') ?? '';
+  render();
+</script>
+</body>
+</html>

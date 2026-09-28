@@ -1,0 +1,1140 @@
+provider:
+  id: volcengine
+  name: 火山方舟
+  website: https://console.volcengine.com/ark
+  deprecation_page: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+# 数据整理自火山方舟官方「模型下线公告」（2026、2025、2024 三页），第一批至第十批。
+# retire_at 为 EOS（模型服务下线）时间；replacement 为官方「建议迁移模型」。
+# 老公告里的 doubao-seed-1.6-250615 等写法统一为 API 使用的连字符形式，原写法保留在 aliases 中。
+
+models:
+  # 当前可用（官方建议迁移的目标模型，且未出现在下线清单中）
+
+  - id: doubao-embedding-vision-251215
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-character-251128
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-2-0-fast-260128
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-evolving
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: glm-5-2-260617
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v4-flash-ga-260731
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-0-lite-260428
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-0-mini-260428
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-character-260628
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-2-0-mini-260615
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-1-lite-260915
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-1-pro-260915
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-4-0-20260415
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-5-0-pro-260628
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v4-1-flash-260910
+    status: active
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  # 第一批
+
+  - id: doubao-lite-4k-240328
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-lite-4k-character-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-128k-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-32k-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-4k-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-4k-browsing-240524
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-pro-32k-browsing-241115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-4k-character-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: doubao-pro-4k-functioncall-240515
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark3-lite-128k-240428
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-128k-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark3-lite-4k-240328
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark3-pro-4k-240415
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark3-pro-8k-browsing-intent-240415
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-4k-browsing-intent-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-lite-8k-browsing-intent-240615
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-4k-browsing-intent-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-lite-8k-1.0
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-4k-browsing-intent-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-lite-4k
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-lite-character-8k
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-lite-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-character-4k
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-character-4k-ecom-20240415
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-32k
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-4k-browsing
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-pro-32k-browsing-241115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-4k-browsing-240415
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-pro-32k-browsing-241115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-4k-character-240328
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark2-pro-4k
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: web-intent
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-pro-32k-browsing-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark-web
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-pro-32k-browsing-241115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark-plus-public
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark-pro-public
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark-lite-public
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: skylark-chat
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: llama3-70b-instruct
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: llama3-8b-instruct
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: mistral-7b-instruct-v0.2
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    notes: 官方未给出替代模型，到期直接关停。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: chatglm3-130-fin
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    notes: 官方未给出替代模型，到期直接关停。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  - id: chatglm3-130b-fc
+    status: retired
+    announced_at: 2024-09-30
+    retire_at: 2025-04-15
+    notes: 官方未给出替代模型，到期直接关停。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2024
+
+  # 第二批
+
+  - id: doubao-pro-32k-240615
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-character-240528
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-128k-240628
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-32k-240428
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-32k-240628
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-lite-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-4k-character-240728
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-character-250228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-4k-functioncall-240615
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-functioncall-240515
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-functioncall-240815
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-1-5-pro-32k-250115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-browsing-240615
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-pro-32k-browsing-241115
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-4k-browsing-intent-240615
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    replacement: doubao-lite-4k-browsing-intent-240828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: glm3-130b
+    status: retired
+    announced_at: 2025-01-10
+    retire_at: 2025-05-28
+    notes: 官方未指定替代模型，建议迁移至方舟平台其他模型。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  # 第三批
+
+  - id: doubao-pro-32k-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-character-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-character-250715。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-vision-pro-32k-241028
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-vision-pro-250328。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-vision-pro-32k-241215
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-1-5-thinking-vision-pro-250428
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-vision-pro-250328。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-vision-lite-32k-241015
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-vision-lite-250315。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-32k-character-241015
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-lite-32k-character-250228。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-4k-character-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-lite-32k-character-250228。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-128k-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-lite-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-lite-128k-240428
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-256k-241115
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-256k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-256k-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-256k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-functioncall-241028
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-browsing-240828
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-pro-32k-browsing-241115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: deepseek-r1-distill-qwen-32b-250120
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: deepseek-r1-distill-qwen-7b-250120
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-flash-250615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-embedding-text-240515
+    status: deprecated
+    announced_at: 2025-06-30
+    replacement: doubao-embedding-vision-250615
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-embedding-vision-241215
+    status: deprecated
+    announced_at: 2025-06-30
+    replacement: doubao-embedding-vision-250615
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-functioncall-preview
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-oracy-240928
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-creation-241028
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-pro-32k-250115。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-1-5-thinking-pro-m-250415
+    aliases: [doubao-1.5-thinking-pro-m-250415]
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-1-5-vision-pro-32k-preview
+    aliases: [doubao-1.5-vision-pro-32k-preview]
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-vision-pro-250328。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-1-5-thinking-pro-vision-250415
+    aliases: [doubao-1.5-thinking-pro-vision-250415]
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-thinking-pro-m-250428。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-1-5-ui-tars-250328
+    aliases: [doubao-1.5-ui-tars-250328]
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移时，系统会自动替换为 doubao-1-5-ui-tars-250428。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-seaweed-241128
+    status: retired
+    announced_at: 2025-06-30
+    retire_at: 2025-08-28
+    replacement: doubao-seedance-1-0-pro-250528
+    alternatives: [doubao-seedance-1-0-lite-i2v-250428, doubao-seedance-1-0-lite-t2v-250428]
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  # 第四批
+
+  - id: moonshot-v1-128k
+    status: retired
+    announced_at: 2025-07-23
+    retire_at: 2025-08-07
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: moonshot-v1-32k
+    status: retired
+    announced_at: 2025-07-23
+    retire_at: 2025-08-07
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: moonshot-v1-8k
+    status: retired
+    announced_at: 2025-07-23
+    retire_at: 2025-08-07
+    replacement: doubao-seed-1-6-250615
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  # 第五批
+
+  - id: doubao-lite-32k-240828
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seed-1-6-flash-250828
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-241215
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seed-1-6-251015
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-character-241215
+    aliases: ["doubao-pro-32k/character-241215"]
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-1-5-pro-32k-character-250715
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-pro-32k-browsing-241115
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seed-1-6-251015
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: wan2-1-14b-i2v-250225
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seedance-1-0-pro-250528
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: wan2-1-14b-flf2v-250417
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seedance-1-0-pro-250528
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: wan2-1-14b-t2v-250225
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seedance-1-0-pro-250528
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: deepseek-r1-250120
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: deepseek-v3-1-250821
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: deepseek-v3-241226
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: deepseek-v3-1-250821
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: kimi-k2-250711
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: kimi-k2-250905
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  - id: doubao-1-5-pro-256k-250115
+    status: retired
+    announced_at: 2025-09-15
+    retire_at: 2025-11-27
+    replacement: doubao-seed-1-6-251015
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-announcement-2025
+
+  # 第六批
+
+  - id: doubao-seed-1-6-thinking-250615
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-thinking-250715
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-flash-250715
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-mini-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-vision-pro-250328
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-thinking-vision-pro-250428
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-vision-lite-250315
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-thinking-pro-250415
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-thinking-pro-m-250428
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-ui-tars-250428
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v3-1-250821
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: deepseek-v3-1-terminus
+    notes: 到期未迁移时，系统会自动替换为 doubao-seed-2-0-lite-260215。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-embedding-text-240715
+    status: deprecated
+    announced_at: 2025-12-19
+    replacement: doubao-embedding-vision-251215
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-embedding-vision-250328
+    status: deprecated
+    announced_at: 2025-12-19
+    replacement: doubao-embedding-vision-251215
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-embedding-large-text-240915
+    status: deprecated
+    announced_at: 2025-12-19
+    replacement: doubao-embedding-vision-251215
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-embedding-large-text-250515
+    status: deprecated
+    announced_at: 2025-12-19
+    replacement: doubao-embedding-vision-251215
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seededit-3-0-i2i-250628
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seedream-4-5-251128
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: kimi-k2-250905
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: kimi-k2-thinking-251104
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-clasi-s2t-241215
+    status: retired
+    announced_at: 2025-12-19
+    retire_at: 2026-03-31
+    notes: 官方未给出替代模型，到期直接关停。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  # 第七批
+
+  - id: gpt-oss-120b-250805
+    status: retired
+    announced_at: 2026-03-17
+    retire_at: 2026-03-24
+    replacement: doubao-seed-2-0-mini-260215
+    notes: 公告只列出了到期后系统自动替换的模型，这里记为替代模型。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-lite-32k-character-250228
+    status: retired
+    announced_at: 2026-03-17
+    retire_at: 2026-03-24
+    replacement: doubao-seed-character-251128
+    notes: 公告只列出了到期后系统自动替换的模型，这里记为替代模型。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-lite-4k-browsing-intent-240828
+    status: retired
+    announced_at: 2026-03-17
+    retire_at: 2026-03-24
+    replacement: doubao-seed-2-0-mini-260215
+    notes: 公告只列出了到期后系统自动替换的模型，这里记为替代模型。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed3d-1-0-250928
+    status: retired
+    announced_at: 2026-03-17
+    retire_at: 2026-03-24
+    notes: 官方未给出替代模型，到期直接关停。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  # 第八批
+
+  - id: deepseek-r1-250528
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v3-250324
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v3-1-terminus
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-2-0-lite-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-pro-32k-character-250228
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-character-251128
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-lite-251015
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-2-0-mini-260215
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-8-251215
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seed-1-8-251228
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-1-0-lite-i2v-250428
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seedance-2-0-fast-260128
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-1-0-lite-t2v-250428
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seedance-2-0-fast-260128
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-3-0-t2i-250415
+    status: retired
+    announced_at: 2026-04-03
+    retire_at: 2026-05-11
+    replacement: doubao-seedream-5-0-lite-260128
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  # 第九批
+
+  - id: kimi-k2-5-260127
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-evolving
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: glm-4-7-251222
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: glm-5-2-260617
+    notes: 到期未迁移时，系统会自动替换为 doubao-seed-evolving。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v4-flash-260425
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: deepseek-v4-flash-ga-260731
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v3-2-251201
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-07-30
+    replacement: deepseek-v4-flash-ga-260731
+    notes: 如使用了 Bot API，需先迁移至 Responses API，否则下线后调用会报错。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-code-preview-251028
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-evolving
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-8-251228
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-vision-250815
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-250615
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-251015
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-flash-250828
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-mini-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-1-6-flash-250615
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-mini-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-lite-32k-250115
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-mini-260428
+    notes: 如使用了 Bot API、Context API，需先迁移至 Responses API，否则下线后调用会报错。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-vision-pro-32k-250115
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    notes: 如使用了 Bot API，需先迁移至 Responses API，否则下线后调用会报错。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-pro-32k-250115
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-2-0-lite-260428
+    notes: 如使用了 Bot API、Context API，需先迁移至 Responses API，否则下线后调用会报错。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-1-5-pro-32k-character-250715
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seed-character-260628
+    notes: 如使用了 Bot API、Context API，需先迁移至 Responses API，否则下线后调用会报错。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-1-5-pro-251215
+    status: retired
+    announced_at: 2026-07-03
+    retire_at: 2026-09-21
+    replacement: doubao-seedance-2-0-mini-260615
+    notes: 到期未迁移将直接关停，不会自动切换。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  # 第十批
+
+  - id: doubao-seed-2-0-lite-260215
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-10-22
+    replacement: doubao-seed-2-1-lite-260915
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-0-mini-260215
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-10-22
+    replacement: doubao-seed-2-0-mini-260428
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-0-pro-260215
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seed-2-1-pro-260915
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-embedding-vision-250615
+    status: deprecated
+    announced_at: 2026-09-22
+    replacement: doubao-embedding-vision-251215
+    notes: embedding 模型仅停止新增接入点（EOM），存量服务不受影响；迁移前需重建知识库。
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-1-0-pro-250528
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seedance-2-0-mini-260615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedance-1-0-pro-fast-251015
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seedance-2-0-mini-260615
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seed-2-0-code-preview-260215
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seed-evolving
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-4-0-250828
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seedream-4-0-20260415
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-4-5-251128
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seedream-5-0-pro-260628
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: doubao-seedream-5-0-lite-260128
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seedream-5-0-pro-260628
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: glm-5-1-260428
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: doubao-seed-evolving
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+
+  - id: deepseek-v4-pro-260425
+    status: deprecated
+    announced_at: 2026-09-22
+    retire_at: 2026-11-24
+    replacement: deepseek-v4-1-flash-260910
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice

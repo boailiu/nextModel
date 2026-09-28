@@ -1,0 +1,8 @@
+provider:
+  id: zhipu
+  name: 智谱 BigModel
+  website: https://bigmodel.cn
+  deprecation_page: https://docs.bigmodel.cn/cn/update/new-releases
+
+# 待补充：欢迎按 CONTRIBUTING.md 提交 PR，每条记录请附官方公告链接。
+models: []

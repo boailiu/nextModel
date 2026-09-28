@@ -1,0 +1,41 @@
+name: 报告模型下线
+description: 某个模型已经或即将下线，但还没收录（或信息有误）
+title: "[下线] "
+labels: [data]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: 模型 ID
+      description: API 调用时传的 model 参数
+      placeholder: qwen-max-2025-01-25
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: 厂商 / 平台
+      placeholder: 阿里云百炼
+    validations:
+      required: true
+  - type: input
+    id: retire_at
+    attributes:
+      label: 下线日期
+      placeholder: 2026-10-10
+  - type: input
+    id: replacement
+    attributes:
+      label: 官方推荐的替代模型
+  - type: input
+    id: source
+    attributes:
+      label: 官方公告链接
+      description: 必填，请提供厂商官方文档或公告，不接受媒体报道作为来源
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明
+      description: 迁移注意事项，如参数变化、上下文长度差异等

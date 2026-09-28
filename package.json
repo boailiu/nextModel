@@ -1,0 +1,54 @@
+{
+  "name": "nextmodel",
+  "version": "0.1.0",
+  "description": "查询国内大模型下线后的替代模型：DeepSeek、Kimi、通义千问、豆包、智谱……",
+  "type": "module",
+  "bin": {
+    "nextmodel": "lib/cli.js"
+  },
+  "exports": {
+    ".": "./lib/core.js",
+    "./models.json": "./dist/models.json"
+  },
+  "types": "./lib/core.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:data && tsc",
+    "build:data": "node scripts/build-data.mjs",
+    "build:site": "npm run build && node scripts/build-site.mjs",
+    "check": "node scripts/build-data.mjs --check",
+    "test": "npm run build && node --test test/",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "llm",
+    "model",
+    "deprecation",
+    "migration",
+    "deepseek",
+    "kimi",
+    "qwen",
+    "doubao",
+    "glm"
+  ],
+  "homepage": "https://boailiu.github.io/nextModel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boailiu/nextModel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boailiu/nextModel/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "typescript": "^5.9.0",
+    "yaml": "^2.9.0"
+  }
+}

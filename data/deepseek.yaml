@@ -1,0 +1,30 @@
+provider:
+  id: deepseek
+  name: DeepSeek
+  website: https://platform.deepseek.com
+  deprecation_page: https://api-docs.deepseek.com/news/news260424/
+
+models:
+  - id: deepseek-v4-pro
+    status: active
+    source: https://api-docs.deepseek.com/news/news260424/
+
+  - id: deepseek-v4-flash
+    status: active
+    source: https://api-docs.deepseek.com/news/news260424/
+
+  - id: deepseek-chat
+    status: retired
+    retire_at: 2026-07-24
+    replacement: deepseek-v4-flash
+    alternatives: [deepseek-v4-pro]
+    notes: 下线前 deepseek-chat 路由到 deepseek-v4-flash 的非思考模式，直接替换为 deepseek-v4-flash 即可保持行为一致。
+    source: https://api-docs.deepseek.com/news/news260424/
+
+  - id: deepseek-reasoner
+    status: retired
+    retire_at: 2026-07-24
+    replacement: deepseek-v4-flash
+    alternatives: [deepseek-v4-pro]
+    notes: 下线前 deepseek-reasoner 路由到 deepseek-v4-flash 的思考模式，替换后需在请求中开启思考模式。
+    source: https://api-docs.deepseek.com/news/news260424/

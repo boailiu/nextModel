@@ -1,5 +1,5 @@
 {
-  "name": "nextmodel",
+  "name": "@boailiu/nextmodel",
   "version": "0.1.0",
   "description": "查询国内大模型下线后的替代模型：DeepSeek、Kimi、通义千问、豆包、智谱……",
   "type": "module",
@@ -43,6 +43,10 @@
     "url": "https://github.com/boailiu/nextModel/issues"
   },
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   },

@@ -23,8 +23,8 @@ const HELP = `nextmodel ${pkg.version} — 查询国内大模型下线后的替�
   -h, --help                显示帮助
 
 示例:
-  npx nextmodel deepseek-chat
-  npx nextmodel scan src --fail-on deprecated`;
+  npx @boailiu/nextmodel deepseek-chat
+  npx @boailiu/nextmodel scan src --fail-on deprecated`;
 
 const useColor = process.stdout.isTTY && !process.env.NO_COLOR;
 const paint = (code: number) => (s: string) => (useColor ? `\x1b[${code}m${s}\x1b[0m` : s);

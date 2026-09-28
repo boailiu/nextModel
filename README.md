@@ -11,10 +11,10 @@
 
 ## 快速开始
 
-无需安装，直接用 `npx`（需要 Node.js 18+）：
+无需安装，直接用 `npx`（需要 Node.js 18+）；也可以 `npm i -g @boailiu/nextmodel` 全局安装后直接用 `nextmodel` 命令：
 
 ```console
-$ npx nextmodel deepseek-reasoner
+$ npx @boailiu/nextmodel deepseek-reasoner
 deepseek-reasoner  已下线  DeepSeek
   下线日期  2026-07-24
   替代模型  deepseek-v4-flash
@@ -26,7 +26,7 @@ deepseek-reasoner  已下线  DeepSeek
 ### 扫描项目
 
 ```console
-$ npx nextmodel scan
+$ npx @boailiu/nextmodel scan
 src/llm.py:12:46  deepseek-chat  已下线 (2026-07-24)  → deepseek-v4-flash
 .env:3:7  moonshot-v1-32k  已下线 (2026-08-31)  → kimi-k3
 
@@ -41,7 +41,7 @@ src/llm.py:12:46  deepseek-chat  已下线 (2026-07-24)  → deepseek-v4-flash
 
 ```yaml
 # .github/workflows/model-check.yml
-- run: npx nextmodel@latest scan --latest --fail-on deprecated
+- run: npx @boailiu/nextmodel@latest scan --latest --fail-on deprecated
 ```
 
 ### 全部命令
@@ -59,8 +59,8 @@ src/llm.py:12:46  deepseek-chat  已下线 (2026-07-24)  → deepseek-v4-flash
 ### 作为库使用
 
 ```js
-import { ModelIndex } from 'nextmodel';
-import db from 'nextmodel/models.json' with { type: 'json' };
+import { ModelIndex } from '@boailiu/nextmodel';
+import db from '@boailiu/nextmodel/models.json' with { type: 'json' };
 
 const index = new ModelIndex(db);
 const [r] = index.lookup('moonshot-v1-8k');

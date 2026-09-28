@@ -20,7 +20,7 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
       # Trusted Publishing 需要 npm >= 11.5.1
-      - run: npm install -g npm@latest
+      - run: npm install -g npm@11
       - run: npm ci
       - id: check
         name: Skip if version already published
